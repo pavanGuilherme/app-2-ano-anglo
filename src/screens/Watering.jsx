@@ -82,7 +82,7 @@ export default function Watering({ onBack }) {
           </div>
 
           <button type="button" className="water-btn" onClick={handleWater} disabled={isMax}>
-            {isMax ? 'A plantinha floresceu! 🎉' : 'Regar a plantinha 💧'}
+            {isMax ? 'A plantinha floresceu!\u00a0🎉' : 'Regar a plantinha\u00a0💧'}
           </button>
         </div>
 

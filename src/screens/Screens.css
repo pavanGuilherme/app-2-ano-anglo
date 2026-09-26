@@ -5,13 +5,13 @@
 }
 
 .home-welcome h2 {
-  font-size: 1.5rem;
+  font-size: var(--fonte-titulo);
   margin-bottom: 4px;
 }
 
 .home-welcome p {
-  color: var(--ink-soft);
-  font-size: 0.95rem;
+  font-size: var(--fonte-corpo);
+  font-weight: 600;
 }
 
 .home-grid {
@@ -30,8 +30,8 @@
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 18px 10px;
-  min-height: 120px;
+  padding: 18px 8px;
+  min-height: 150px;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
@@ -60,9 +60,10 @@
 .menu-btn-label {
   font-family: 'Baloo 2', 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 0.92rem;
-  color: var(--ink);
+  font-size: var(--fonte-corpo);
   line-height: 1.2;
+  hyphens: none;
+  text-wrap: balance;
 }
 
 /* ---- Item list / cards (plants, products, wellness) ---- */
@@ -96,15 +97,12 @@
 }
 
 .item-card-title {
-  font-size: 1.02rem;
-  color: var(--leaf-deep);
-  margin-bottom: 3px;
+  font-size: var(--fonte-subtitulo);
+  margin-bottom: 4px;
 }
 
 .item-card-desc {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: var(--fonte-corpo);
 }
 
 /* ---- Heart button ---- */
@@ -137,12 +135,10 @@
 .warning-box {
   background: #fdf1dd;
   border: 1px solid var(--accent);
-  color: #7a5316;
   border-radius: 14px;
   padding: 12px 14px;
   font-weight: 700;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: var(--fonte-corpo);
   margin-bottom: 8px;
 }
 
@@ -170,9 +166,7 @@
 }
 
 .recipe-card-title {
-  font-size: 1.05rem;
-  color: var(--leaf-deep);
-  line-height: 1.3;
+  font-size: var(--fonte-subtitulo);
 }
 
 .recipe-card-list {
@@ -184,24 +178,22 @@
 .recipe-card-row dt {
   font-family: 'Baloo 2', 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: var(--fonte-pequena);
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: var(--leaf);
+  color: var(--texto-secundario);
   margin-bottom: 2px;
 }
 
 .recipe-card-row dd {
   margin: 0;
-  color: var(--ink);
-  font-size: 0.92rem;
-  line-height: 1.45;
+  font-size: var(--fonte-corpo);
 }
 
 /* ---- Tips chip grid ---- */
 .chip-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   margin-bottom: 16px;
 }
@@ -225,15 +217,12 @@
 .chip-title {
   font-family: 'Baloo 2', 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--leaf-deep);
+  font-size: var(--fonte-corpo);
   line-height: 1.2;
 }
 
 .chip-desc {
-  font-size: 0.78rem;
-  color: var(--ink-soft);
-  line-height: 1.3;
+  font-size: var(--fonte-pequena);
 }
 
 /* ---- Empty state (favorites) ---- */
@@ -244,7 +233,6 @@
   text-align: center;
   gap: 10px;
   padding: 48px 12px;
-  color: var(--ink-soft);
 }
 
 .empty-state-emoji {
@@ -252,8 +240,6 @@
 }
 
 .empty-state p {
-  font-size: 0.95rem;
-  line-height: 1.5;
   max-width: 26ch;
 }
 
@@ -269,7 +255,7 @@
 }
 
 .profile-card h2 {
-  font-size: 1.1rem;
+  font-size: var(--fonte-subtitulo);
   text-align: center;
 }
 
@@ -282,21 +268,35 @@
 .profile-field dt {
   font-family: 'Baloo 2', 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: var(--fonte-pequena);
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: var(--leaf);
+  color: var(--texto-secundario);
   margin-bottom: 2px;
 }
 
 .profile-field dd {
   margin: 0;
-  font-size: 0.95rem;
-  color: var(--ink);
-  line-height: 1.5;
+  font-size: var(--fonte-corpo);
 }
 
 .profile-field-block {
   border-top: 1px dashed var(--border);
   padding-top: 12px;
+}
+
+/* Celulares estreitos: com as fontes grandes, palavras longas não cabem */
+@media (max-width: 360px) {
+  .item-card {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .item-card-title {
+    font-size: var(--fonte-corpo);
+  }
+
+  .chip-grid {
+    grid-template-columns: 1fr;
+  }
 }

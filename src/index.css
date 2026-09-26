@@ -2,13 +2,20 @@
   --bg: #f4faf1;
   --surface: #ffffff;
   --surface-2: #eaf6e4;
-  --ink: #1f3d2b;
   --ink-soft: #4c6b57;
   --accent: #e8a33d;
   --accent-2: #d6577a;
   --leaf: #3f9c6d;
   --leaf-deep: #2e7d53;
   --border: #d7ead0;
+
+  /* Tipografia: textos escuros e grandes para projeção */
+  --texto-principal: #0b2545;
+  --texto-secundario: #1b3a5c;
+  --fonte-titulo: 34px;
+  --fonte-subtitulo: 24px;
+  --fonte-corpo: 20px;
+  --fonte-pequena: 16px; /* menor tamanho permitido */
 
   color-scheme: light;
 }
@@ -25,9 +32,11 @@ body {
 
 body {
   background: var(--bg);
-  color: var(--ink);
+  color: var(--texto-principal);
   font-family: 'Nunito', system-ui, sans-serif;
-  font-weight: 400;
+  font-size: var(--fonte-corpo);
+  font-weight: 500;
+  line-height: 1.4;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
@@ -39,7 +48,8 @@ h4 {
   font-family: 'Baloo 2', 'Nunito', system-ui, sans-serif;
   font-weight: 700;
   margin: 0;
-  color: var(--leaf-deep);
+  color: var(--texto-principal);
+  line-height: 1.2;
 }
 
 p {
